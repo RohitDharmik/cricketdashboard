@@ -1,9 +1,10 @@
 [build]
-  command = "CI='' npm run build"
-  publish = "/build"
-  base ="/"
+  command = "npm run build"        # Run build command
+  publish = "dist"                 # Ensure this is the directory Vite outputs to
+  functions = "netlify/functions"  # Optional: If you're using Netlify Functions
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
